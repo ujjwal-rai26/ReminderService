@@ -12,14 +12,13 @@ const setupAndStartServer=()=>{
    app.use(bodyParser.urlencoded({extended:true}));
 
    app.listen(PORT,()=>{
-    console.log(`server stared at port ${PORT}`);
+    console.log(`server stared at the port ${PORT}`);
 
     sendBasicEmail(
       'support@admin.com',
       'ujjwalrai111111@gmail.com',
       'this is testsing mail',
       'heyy king'
-
     );
 
    })
