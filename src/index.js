@@ -14,14 +14,14 @@ const setupAndStartServer=()=>{
    app.listen(PORT,()=>{
     console.log(`server stared at the port ${PORT}`);
 
-    sendBasicEmail(
-      'support@admin.com',
-      'ujjwalrai111111@gmail.com',
-      'this is testsing mail',
-      'heyy king'
-    );
+//     sendBasicEmail(
+//       'support@admin.com',
+//       'ujjwalrai111111@gmail.com',
+//       'this is testsing mail',
+//       'heyy king'
+//     );
 
-   })
+    })
 
 }
 
