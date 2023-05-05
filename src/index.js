@@ -3,7 +3,10 @@ const bodyParser =require('body-parser');
 
 const { PORT }=require(`./config/serverConfig`);
 
-const {sendBasicEmail}=require('./services/email-service');
+//const {sendBasicEmail}=require('./services/email-service');
+
+const TicketController=require('./controllers/ticket-controller');
+const jobs=require('./utils/job');
 
 const setupAndStartServer=()=>{
    const app=express();
@@ -11,9 +14,11 @@ const setupAndStartServer=()=>{
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({extended:true}));
 
+   app.post('/api/v1/tickets',TicketController.create);
+
    app.listen(PORT,()=>{
     console.log(`server stared at the port ${PORT}`);
-
+       jobs();
 //     sendBasicEmail(
 //       'support@admin.com',
 //       'ujjwalrai111111@gmail.com',
